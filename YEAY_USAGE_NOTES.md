@@ -17,7 +17,7 @@ You should follow the directions to get Detectron running.  We will assume you h
 ### 2) Install requirements
   - make sure your conda environment is activated `conda activate mlpy2`
   - install tensorflow gpu `pip install --upgrade tensorflow-gpu`.  The Tensorflow install instructions are more confusing than helpful, but they are [here](https://www.tensorflow.org/install/install_linux) if you need them
-  - make sure ffmpeg is installed `conda install ffmpeg`  (you can also install this systemwide but Ubuntu's ffmpeg tends to not get update very often).
+  - make sure the requirements is installed `conda install ffmpeg scipy` and `pip install moviepy`  (you can also install this systemwide but Ubuntu's ffmpeg tends to not get update very often).
 
 ### 3) Run setup.sh `./setup.sh`
   - the joan miro style network can be found [here](https://drive.google.com/drive/u/0/folders/16PwqT3hvSAnVUjk8NHJJnUeEpwPSDVD6)
