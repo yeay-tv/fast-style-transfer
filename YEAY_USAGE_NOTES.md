@@ -30,11 +30,21 @@ You should follow the directions to get Detectron running.  We will assume you h
     --device /gpu:0 \
     --batch-size 4`
 
-### 4) [Optional]  If you want to train more models, you will need to download the COCO 2014 train dataset.
+### 5) [Optional]  If you want to train more models, you will need to download the COCO 2014 train dataset.
   - make approriate dirs in the repo folder and in our datasets folder.  `mkdir -p ~/datasets/COCO && cd ~/datasets/COCO`
   - download the dataset `wget http://images.cocodataset.org/zips/train2014.zip` and unzip it
   - move back into the repo and symlink this folder `cd ~/repos/fast-style-transfer/data && ln -s /home/ubuntu/datasets/COCO/train2014 train2014`
   - follow the repo's instructions as normal.
+
+## Docker Notes
+
+The docker functions very similarly to the Detectron one.  Below are the commands to build the container and to run a sample video inference
+
+```sh
+docker build --no-cache -t yeay-fast-style-transfer .
+
+nvidia-docker run -v ~/datasets/yeay:/datasets/yeay  --rm -it yeay-fast-style-transfer python transform_video.py --in-path examples/content/fox.mp4 --checkpoint chkpts/joan_miro --out-path /datasets/yeay/fst/fox.mp4 --device /gpu:0 --batch-size 4
+```
 
 ## Notes
 
